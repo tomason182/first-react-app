@@ -1,0 +1,62 @@
+@font-face {
+  font-family: "roboto-light";
+  src: url(../assets/fonts/roboto/Roboto-Light.ttf);
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto-black";
+  src: url(../assets/fonts/roboto/Roboto-Black.ttf);
+  font-style: normal;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+form {
+  width: 80%;
+  min-width: 300px;
+}
+
+fieldset {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7em;
+  margin: 2em 0;
+  padding: 2em 2em 4em 2em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  min-width: 200px;
+}
+
+legend {
+  font: 1.09em "roboto-light";
+  padding: 0.5em 0.75em;
+  color: #333;
+}
+
+label {
+  font-family: "roboto-black", sans-serif;
+  font-size: 0.8em;
+  color: #222;
+}
+
+label:first-of-type {
+  margin-top: 0;
+}
+
+input {
+  padding: 0.3em;
+  border: 1px solid #999;
+  width: 100%;
+}
