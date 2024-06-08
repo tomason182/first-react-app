@@ -1,11 +1,31 @@
+import { useState } from "react";
+
 export default function PersonalInfo() {
+  const [values, setValues] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setValues(e.target.value);
+  }
+
+  console.log(values);
+
   return (
-    <form action="" method="get" className="form personal-info">
+    <form
+      action=""
+      method="get"
+      className="form personal-info"
+      onSubmit={handleSubmit}
+    >
       <fieldset>
         <legend>Personal Info</legend>
 
         <label htmlFor="full-name">Full name</label>
-        <input type="text" name="full-name" />
+        <input
+          type="text"
+          name="full-name"
+          onChange={(e) => setValues(e.target.value)}
+        />
 
         <label htmlFor="phone-number">Phone number</label>
         <input type="tel" name="phone-number" />

@@ -1,21 +1,89 @@
+/* Font styling */
+
 .resume-body {
+  padding: 1rem 4rem;
+}
+
+.resume-body h1 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 3em;
+}
+
+.resume-body h2 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 1.5em;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #bbb;
+  text-align: center;
+}
+
+.resume-body h3 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 1.1em;
+}
+
+.resume-body h4 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 0.9em;
+}
+
+.resume-body p,
+.resume-body ul {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 0.8em;
+}
+
+/* Header Distribution */
+
+.resume-header {
   display: flex;
   flex-direction: column;
-  text-align: center;
-  justify-content: center;
+  margin-bottom: 2rem;
 }
-.resume-body > ul {
+
+.resume-header > ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  font-size: 1em;
+}
+
+.resume-header > h1 {
+  align-self: center;
+  margin-bottom: 0.3rem;
+}
+
+.resume-header > ul > li > span {
+  padding-left: 0.7rem;
+}
+
+/* Skills style */
+
+.skills {
+  display: grid;
+  grid-template-rows: 1fr 1.3fr 1.3fr;
+}
+
+.skills > h2 {
+  grid-row: 1;
+}
+
+.hard-skills {
+  grid-row: 2;
+}
+
+.soft-skills {
+  grid-row: 3;
+}
+
+.soft-skills > ul,
+.hard-skills > ul {
   display: flex;
   justify-content: space-between;
-  list-style: none;
-  padding: 0;
+  flex-wrap: wrap;
 }
 
-.resume-body > ul > li {
-  padding: 0 0.5rem;
-  margin: 0 0.3rem;
-}
-
-.resume-body > ul > li > span {
-  padding-left: 0.4rem;
+.soft-skills > ul > li,
+.hard-skills > ul > li {
+  padding-right: 1.3rem;
 }

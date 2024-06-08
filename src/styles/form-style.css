@@ -60,3 +60,36 @@ input {
   border: 1px solid #999;
   width: 100%;
 }
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+}
+
+.button-container > button {
+  padding: 0.4rem 0.8rem;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.button-container > .submit {
+  background-color: #3a86ff;
+}
+
+.button-container > .submit:disabled {
+  background-color: #3a86ff70;
+  cursor: not-allowed;
+}
+
+.button-container > .back {
+  background-color: #333;
+}
+
+.button-container > .back:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
