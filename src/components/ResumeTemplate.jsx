@@ -1,3 +1,9 @@
+import ResumeHeader from "./ResumeHeader";
+
 export default function ResumeTemplate() {
-  return <div>Resume Template</div>;
+  return (
+    <div className="resume-body">
+      <ResumeHeader />
+    </div>
+  );
 }
