@@ -18,6 +18,16 @@ export default function PersonalInfo() {
 
         <label htmlFor="location">Region / Country</label>
         <input type="tel" name="location" />
+
+        <div className="button-container">
+          <button type="button" className="back" disabled>
+            Back
+          </button>
+
+          <button type="submit" className="submit">
+            Submit & continue
+          </button>
+        </div>
       </fieldset>
     </form>
   );
