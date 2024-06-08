@@ -5,7 +5,7 @@ import { FaLocationDot } from "react-icons/fa6";
 export default function ResumeHeader() {
   return (
     <div className="resume-header">
-      <h1 className="full-name">Sergeant García</h1>
+      <h1>Sergeant García</h1>
       <ul>
         <li>
           <MdOutlinePhone />
