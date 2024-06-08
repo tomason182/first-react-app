@@ -1,0 +1,21 @@
+.resume-body {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+.resume-body > ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+}
+
+.resume-body > ul > li {
+  padding: 0 0.5rem;
+  margin: 0 0.3rem;
+}
+
+.resume-body > ul > li > span {
+  padding-left: 0.4rem;
+}

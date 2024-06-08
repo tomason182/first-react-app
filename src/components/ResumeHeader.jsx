@@ -1,6 +1,7 @@
 import { MdAlternateEmail, MdOutlinePhone } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import "../styles/resume-template.css";
 
 export default function ResumeHeader() {
   return (
@@ -8,18 +9,20 @@ export default function ResumeHeader() {
       <h1 className="full-name">Sergeant García</h1>
       <ul>
         <li>
-          <MdOutlinePhone /> +1234567890
+          <MdOutlinePhone />
+          <span>+1234567890</span>
         </li>
         <li>
-          <MdAlternateEmail /> sgtGarcia@example.com
+          <MdAlternateEmail />
+          <span>sgtGarcia@example.com</span>
         </li>
         <li>
           <FaLinkedin />
-          linkedin.com/sgt-garcia
+          <span>linkedin.com/sgt-garcia</span>
         </li>
         <li>
           <FaLocationDot />
-          Monterey - CA
+          <span>Monterey - CA</span>
         </li>
       </ul>
     </>
