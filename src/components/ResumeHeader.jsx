@@ -4,7 +4,7 @@ import { FaLocationDot } from "react-icons/fa6";
 
 export default function ResumeHeader() {
   return (
-    <>
+    <div className="resume-header">
       <h1 className="full-name">Sergeant García</h1>
       <ul>
         <li>
@@ -24,6 +24,6 @@ export default function ResumeHeader() {
           <span>Monterey - CA</span>
         </li>
       </ul>
-    </>
+    </div>
   );
 }

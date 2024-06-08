@@ -11,12 +11,14 @@ export default function ResumeTemplate() {
   return (
     <div className="resume-body">
       <ResumeHeader />
-      <ResumeSummary />
-      <ResumeSkills />
-      <ResumeExperience />
-      <ResumeEducation />
-      <ResumeCourses />
-      <ResumeHobbies />
+      <div className="resume-main">
+        <ResumeSummary />
+        <ResumeSkills />
+        <ResumeExperience />
+        <ResumeEducation />
+        <ResumeCourses />
+        <ResumeHobbies />
+      </div>
     </div>
   );
 }
