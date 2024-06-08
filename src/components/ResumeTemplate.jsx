@@ -5,6 +5,7 @@ import ResumeExperience from "./ResumeExperience";
 import ResumeEducation from "./ResumeEducation";
 import ResumeCourses from "./ResumeCourses";
 import ResumeHobbies from "./ResumeHobbies";
+import "../styles/resume-template.css";
 
 export default function ResumeTemplate() {
   return (

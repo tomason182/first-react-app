@@ -1,7 +1,6 @@
 import { MdAlternateEmail, MdOutlinePhone } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
-import "../styles/resume-template.css";
 
 export default function ResumeHeader() {
   return (
