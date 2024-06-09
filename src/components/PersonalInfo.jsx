@@ -1,14 +1,20 @@
 import { useState } from "react";
 
 export default function PersonalInfo() {
-  const [values, setValues] = useState("");
+  const [formData, setFromData] = useState({
+    fullName: "",
+    phoneNumber: "",
+    email: "",
+    social: "",
+    location: "",
+  });
 
   function handleSubmit(e) {
     e.preventDefault();
-    setValues(e.target.value);
-  }
+    const { name, value } = e.target;
 
-  console.log(values);
+    setFromData({ ...formData, [name]: value });
+  }
 
   return (
     <form
@@ -28,7 +34,7 @@ export default function PersonalInfo() {
         />
 
         <label htmlFor="phone-number">Phone number</label>
-        <input type="tel" name="phone-number" />
+        <input type="tel" name="phoneNumber" />
 
         <label htmlFor="email">E-mail</label>
         <input type="text" name="email" />
