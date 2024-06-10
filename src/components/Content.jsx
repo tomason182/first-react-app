@@ -1,5 +1,6 @@
 import PersonalInfo from "./PersonalInfo";
 import Summary from "./Summary";
+import Skills from "./Skills";
 import ResumeContainer from "./ResumenContainer.jsx";
 import "../styles/form-style.css";
 import { useState } from "react";
@@ -12,6 +13,7 @@ export default function Content() {
     social: "",
     region: "",
     summary: "",
+    softSkills: "",
   });
 
   const defaultInfo = {
@@ -40,7 +42,8 @@ export default function Content() {
         <Summary
           personalInfo={personalInfo}
           handlePersonalInfo={handlePersonalInfo}
-        ></Summary>
+        />
+        <Skills />
       </div>
       <ResumeContainer personalInfo={personalInfo} defaultInfo={defaultInfo} />
     </div>
