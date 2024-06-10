@@ -9,11 +9,15 @@ export default function PersonalInfo() {
     location: "",
   });
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  function handleInputChange(e) {
     const { name, value } = e.target;
 
     setFromData({ ...formData, [name]: value });
+  }
+
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    console.log("submitting form:", formData);
   }
 
   return (
@@ -21,7 +25,7 @@ export default function PersonalInfo() {
       action=""
       method="get"
       className="form personal-info"
-      onSubmit={handleSubmit}
+      onSubmit={handleFormSubmit}
     >
       <fieldset>
         <legend>Personal Info</legend>
@@ -29,21 +33,42 @@ export default function PersonalInfo() {
         <label htmlFor="full-name">Full name</label>
         <input
           type="text"
-          name="full-name"
-          onChange={(e) => setValues(e.target.value)}
+          name="fullName"
+          value={formData.fullName}
+          onChange={handleInputChange}
         />
 
         <label htmlFor="phone-number">Phone number</label>
-        <input type="tel" name="phoneNumber" />
+        <input
+          type="tel"
+          name="phoneNumber"
+          value={formData.phoneNumber}
+          onChange={handleInputChange}
+        />
 
         <label htmlFor="email">E-mail</label>
-        <input type="text" name="email" />
+        <input
+          type="text"
+          name="email"
+          value={formData.email}
+          onChange={handleInputChange}
+        />
 
         <label htmlFor="social">LinkedIn Profile</label>
-        <input type="email" name="social" />
+        <input
+          type="text"
+          name="social"
+          value={formData.social}
+          onChange={handleInputChange}
+        />
 
         <label htmlFor="location">Region / Country</label>
-        <input type="tel" name="location" />
+        <input
+          type="tel"
+          name="location"
+          value={formData.location}
+          onChange={handleInputChange}
+        />
 
         <div className="button-container">
           <button type="button" className="back" disabled>
