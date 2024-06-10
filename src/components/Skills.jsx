@@ -1,21 +1,25 @@
-export default function Skills() {
+export default function Skills({ personalInfo, handlePersonalInfo }) {
   return (
     <>
       <form action="" method="get" className="form skills">
         <fieldset>
           <legend>Skills</legend>
-          <label htmlFor="soft-skills">add soft skills</label>
+          <label htmlFor="softSkills">add soft skills</label>
           <input
             type="text"
-            name="soft-skills"
+            name="softSkills"
             placeholder="Add your soft skills separated with coma"
+            value={personalInfo.softskill}
+            onChange={handlePersonalInfo}
           />
           <div className="button-container"></div>
-          <label htmlFor="hard-skills">add hard skills</label>
+          <label htmlFor="hardSkills">add hard skills</label>
           <input
             type="text"
-            name="hard-skills"
+            name="hardSkills"
             placeholder="Add your hard skills separated with coma"
+            value={personalInfo.hardSkills}
+            onChange={handlePersonalInfo}
           />
           <div className="button-container"></div>
         </fieldset>

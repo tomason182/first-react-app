@@ -14,7 +14,10 @@ export default function Content() {
     region: "",
     summary: "",
     softSkills: "",
+    hardSkills: "",
   });
+
+  console.log(personalInfo.softSkills);
 
   const defaultInfo = {
     fullName: "Sergeant Garcia",
@@ -28,7 +31,15 @@ export default function Content() {
 
   function handlePersonalInfo(e) {
     const { name, value } = e.target;
-    setPersonalInfo({ ...personalInfo, [name]: value });
+
+    if (name === "softSkills" || name === "hardSkills") {
+      setPersonalInfo({
+        ...personalInfo,
+        [name]: value.split(",").map((item) => item.trim()),
+      });
+    } else {
+      setPersonalInfo({ ...personalInfo, [name]: value });
+    }
   }
 
   return (
@@ -43,7 +54,10 @@ export default function Content() {
           personalInfo={personalInfo}
           handlePersonalInfo={handlePersonalInfo}
         />
-        <Skills />
+        <Skills
+          personalInfo={personalInfo}
+          handlePersonalInfo={handlePersonalInfo}
+        />
       </div>
       <ResumeContainer personalInfo={personalInfo} defaultInfo={defaultInfo} />
     </div>
