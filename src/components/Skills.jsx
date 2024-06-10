@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export default function Skills({ personalInfo, handlePersonalInfo }) {
   return (
     <>
@@ -9,7 +11,7 @@ export default function Skills({ personalInfo, handlePersonalInfo }) {
             type="text"
             name="softSkills"
             placeholder="Add your soft skills separated with coma"
-            value={personalInfo.softskill}
+            value={personalInfo.softSkills} // This should lead to bugs because softSkills and hardSkills are arrays?
             onChange={handlePersonalInfo}
           />
           <div className="button-container"></div>
@@ -18,7 +20,7 @@ export default function Skills({ personalInfo, handlePersonalInfo }) {
             type="text"
             name="hardSkills"
             placeholder="Add your hard skills separated with coma"
-            value={personalInfo.hardSkills}
+            value={personalInfo.hardSkills} // This should lead to bugs because softSkills and hardSkills are arrays?
             onChange={handlePersonalInfo}
           />
           <div className="button-container"></div>
@@ -27,3 +29,11 @@ export default function Skills({ personalInfo, handlePersonalInfo }) {
     </>
   );
 }
+
+Skills.propTypes = {
+  personalInfo: PropTypes.shape({
+    softSkills: PropTypes.arrayOf(PropTypes.string),
+    hardSkills: PropTypes.arrayOf(PropTypes.string),
+  }),
+  handlePersonalInfo: PropTypes.func.isRequired,
+};
