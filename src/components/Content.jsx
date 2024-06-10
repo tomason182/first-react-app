@@ -17,8 +17,6 @@ export default function Content() {
     hardSkills: "",
   });
 
-  console.log(personalInfo.softSkills);
-
   const defaultInfo = {
     fullName: "Sergeant Garcia",
     phoneNumber: "6380465",
@@ -27,6 +25,20 @@ export default function Content() {
     region: "United States - CA",
     summary:
       "Warm-hearted and dedicated Sergeant in the Royal Spanish Army with over a decade of service in Los Angeles. Known for my friendly demeanor, unwavering loyalty, and knack for turning everyday situations into comedic adventures. While I might not always catch the cunning Zorro, my passion for duty and love for the community shine through. Seeking a position in the esteemed household of Don Diego de la Vega where I can bring joy, security, and perhaps a delicious meal or two.",
+    hardSkills: [
+      "Basic Swordsmanship",
+      "Patrolling and Surveillance",
+      "Military Administration",
+      "Culinary Skills",
+      "Basic First Aid",
+    ],
+    softSkills: [
+      "Empathy and Friendliness",
+      "Perseverance",
+      "Conflict Resolution",
+      "Communication",
+      "Loyalty",
+    ],
   };
 
   function handlePersonalInfo(e) {
