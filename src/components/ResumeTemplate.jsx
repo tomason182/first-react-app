@@ -6,11 +6,12 @@ import ResumeEducation from "./ResumeEducation";
 import ResumeCourses from "./ResumeCourses";
 import ResumeHobbies from "./ResumeHobbies";
 import "../styles/resume-template.css";
+import PropTypes from "prop-types";
 
-export default function ResumeTemplate() {
+export default function ResumeTemplate({ personalInfo, defaultInfo }) {
   return (
     <div className="resume-body">
-      <ResumeHeader />
+      <ResumeHeader personalInfo={personalInfo} defaultInfo={defaultInfo} />
       <div className="resume-main">
         <ResumeSummary />
         <ResumeSkills />
@@ -22,3 +23,8 @@ export default function ResumeTemplate() {
     </div>
   );
 }
+
+ResumeTemplate.propTypes = {
+  personalInfo: PropTypes.object,
+  defaultInfo: PropTypes.object,
+};

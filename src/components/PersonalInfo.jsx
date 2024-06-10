@@ -1,32 +1,12 @@
-import { useState } from "react";
+import PropTypes from "prop-types";
 
-export default function PersonalInfo() {
-  const [formData, setFromData] = useState({
-    fullName: "",
-    phoneNumber: "",
-    email: "",
-    social: "",
-    location: "",
-  });
-
-  function handleInputChange(e) {
-    const { name, value } = e.target;
-
-    setFromData({ ...formData, [name]: value });
-  }
-
-  function handleFormSubmit(e) {
-    e.preventDefault();
-    console.log("submitting form:", formData);
-  }
-
+export default function PersonalInfo({
+  personalInfo,
+  handlePersonalInfo,
+  defaultInfo,
+}) {
   return (
-    <form
-      action=""
-      method="get"
-      className="form personal-info"
-      onSubmit={handleFormSubmit}
-    >
+    <form action="" method="get" className="form personal-info">
       <fieldset>
         <legend>Personal Info</legend>
 
@@ -34,40 +14,45 @@ export default function PersonalInfo() {
         <input
           type="text"
           name="fullName"
-          value={formData.fullName}
-          onChange={handleInputChange}
+          placeholder={defaultInfo.fullName}
+          value={personalInfo.fullName}
+          onChange={handlePersonalInfo}
         />
 
         <label htmlFor="phone-number">Phone number</label>
         <input
           type="tel"
           name="phoneNumber"
-          value={formData.phoneNumber}
-          onChange={handleInputChange}
+          value={personalInfo.phoneNumber}
+          placeholder={defaultInfo.phoneNumber}
+          onChange={handlePersonalInfo}
         />
 
         <label htmlFor="email">E-mail</label>
         <input
           type="text"
           name="email"
-          value={formData.email}
-          onChange={handleInputChange}
+          value={personalInfo.email}
+          placeholder={defaultInfo.email}
+          onChange={handlePersonalInfo}
         />
 
         <label htmlFor="social">LinkedIn Profile</label>
         <input
           type="text"
           name="social"
-          value={formData.social}
-          onChange={handleInputChange}
+          value={personalInfo.social}
+          placeholder={defaultInfo.social}
+          onChange={handlePersonalInfo}
         />
 
         <label htmlFor="location">Region / Country</label>
         <input
           type="tel"
-          name="location"
-          value={formData.location}
-          onChange={handleInputChange}
+          name="region"
+          value={personalInfo.region}
+          placeholder={defaultInfo.region}
+          onChange={handlePersonalInfo}
         />
 
         <div className="button-container">
@@ -83,3 +68,21 @@ export default function PersonalInfo() {
     </form>
   );
 }
+
+PersonalInfo.propTypes = {
+  personalInfo: PropTypes.shape({
+    fullName: PropTypes.string,
+    phoneNumber: PropTypes.string,
+    email: PropTypes.string,
+    social: PropTypes.string,
+    region: PropTypes.string,
+  }).isRequired,
+  handlePersonalInfo: PropTypes.func.isRequired,
+  defaultInfo: PropTypes.shape({
+    fullName: PropTypes.string,
+    phoneNumber: PropTypes.string,
+    email: PropTypes.string,
+    social: PropTypes.string,
+    region: PropTypes.string,
+  }).isRequired,
+};

@@ -1,29 +1,54 @@
 import { MdAlternateEmail, MdOutlinePhone } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import PropTypes from "prop-types";
 
-export default function ResumeHeader() {
+export default function ResumeHeader({ personalInfo, defaultInfo }) {
+  const infoToDisplay = {
+    fullName: personalInfo.fullName || defaultInfo.fullName,
+    phoneNumber: personalInfo.phoneNumber || defaultInfo.phoneNumber,
+    email: personalInfo.email || defaultInfo.email,
+    social: personalInfo.social || defaultInfo.social,
+    region: personalInfo.region || defaultInfo.region,
+  };
   return (
     <div className="resume-header">
-      <h1>Sergeant García</h1>
+      <h1>{infoToDisplay.fullName}</h1>
       <ul>
         <li>
           <MdOutlinePhone />
-          <span>+1234567890</span>
+          <span>{infoToDisplay.phoneNumber}</span>
         </li>
         <li>
           <MdAlternateEmail />
-          <span>sgtGarcia@example.com</span>
+          <span>{infoToDisplay.email}</span>
         </li>
         <li>
           <FaLinkedin />
-          <span>linkedin.com/sgt-garcia</span>
+          <span>{infoToDisplay.social}</span>
         </li>
         <li>
           <FaLocationDot />
-          <span>Monterey - CA</span>
+          <span>{infoToDisplay.region}</span>
         </li>
       </ul>
     </div>
   );
 }
+
+ResumeHeader.propTypes = {
+  personalInfo: PropTypes.shape({
+    fullName: PropTypes.string,
+    phoneNumber: PropTypes.string,
+    email: PropTypes.string,
+    social: PropTypes.string,
+    region: PropTypes.string,
+  }).isRequired,
+  defaultInfo: PropTypes.shape({
+    fullName: PropTypes.string,
+    phoneNumber: PropTypes.string,
+    email: PropTypes.string,
+    social: PropTypes.string,
+    region: PropTypes.string,
+  }).isRequired,
+};
