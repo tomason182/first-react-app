@@ -76,7 +76,7 @@ PersonalInfo.propTypes = {
     email: PropTypes.string,
     social: PropTypes.string,
     region: PropTypes.string,
-  }).isRequired,
+  }),
   handlePersonalInfo: PropTypes.func.isRequired,
   defaultInfo: PropTypes.shape({
     fullName: PropTypes.string,

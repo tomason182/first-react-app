@@ -13,7 +13,7 @@ export default function ResumeTemplate({ personalInfo, defaultInfo }) {
     <div className="resume-body">
       <ResumeHeader personalInfo={personalInfo} defaultInfo={defaultInfo} />
       <div className="resume-main">
-        <ResumeSummary />
+        <ResumeSummary personalInfo={personalInfo} defaultInfo={defaultInfo} />
         <ResumeSkills />
         <ResumeExperience />
         <ResumeEducation />

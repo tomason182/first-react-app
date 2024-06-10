@@ -15,7 +15,7 @@
   border: 1px solid black;
   display: flex;
 }
-.filling-container,
+
 .resume-container {
   border: 1px solid grey;
   display: flex;
@@ -24,6 +24,10 @@
 
 .filling-container {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .resume-container {
