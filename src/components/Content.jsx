@@ -1,6 +1,7 @@
 import PersonalInfo from "./PersonalInfo";
 import Summary from "./Summary";
 import Skills from "./Skills";
+import Experience from "./Experience";
 import ResumeContainer from "./ResumenContainer.jsx";
 import "../styles/form-style.css";
 import { useState } from "react";
@@ -61,6 +62,7 @@ export default function Content() {
           isActive={activeBtn === 2}
           onShow={() => setActiveBtn(2)}
         />
+        <Experience />
       </div>
       <ResumeContainer personalInfo={personalInfo} defaultInfo={defaultInfo} />
     </div>
