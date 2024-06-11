@@ -17,6 +17,12 @@ export default function Content() {
     hardSkills: "",
   });
 
+  const [displayBtn, setDisplayBtn] = useState(false);
+
+  function handleDisplayBtn() {
+    setDisplayBtn(!displayBtn);
+  }
+
   const defaultInfo = {
     fullName: "Sergeant Garcia",
     phoneNumber: "6380465",
@@ -44,6 +50,8 @@ export default function Content() {
           personalInfo={personalInfo}
           handlePersonalInfo={handlePersonalInfo}
           defaultInfo={defaultInfo}
+          displayBtn={displayBtn}
+          handleDisplayBtn={handleDisplayBtn}
         />
         <Summary
           personalInfo={personalInfo}
