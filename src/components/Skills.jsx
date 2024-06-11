@@ -32,8 +32,8 @@ export default function Skills({ personalInfo, handlePersonalInfo }) {
 
 Skills.propTypes = {
   personalInfo: PropTypes.shape({
-    softSkills: PropTypes.arrayOf(PropTypes.string),
-    hardSkills: PropTypes.arrayOf(PropTypes.string),
+    softSkills: PropTypes.string,
+    hardSkills: PropTypes.string,
   }),
   handlePersonalInfo: PropTypes.func.isRequired,
 };

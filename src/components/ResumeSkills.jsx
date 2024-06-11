@@ -3,13 +3,13 @@ import PropTypes from "prop-types";
 export default function ResumeSkills({ personalInfo, defaultInfo }) {
   const hardSkillsList =
     personalInfo.hardSkills && personalInfo.hardSkills.length > 0
-      ? personalInfo.hardSkills
-      : defaultInfo.hardSkills;
+      ? personalInfo.hardSkills.split(",").map((item) => item.trim())
+      : defaultInfo.hardSkills.split(",").map((item) => item.trim());
 
   const softSkillList =
     personalInfo.softSkills && personalInfo.softSkills.length > 0
-      ? personalInfo.softSkills
-      : defaultInfo.softSkills;
+      ? personalInfo.softSkills.split(",").map((item) => item.trim())
+      : defaultInfo.softSkills.split(",").map((item) => item.trim());
 
   return (
     <div className="skills">
@@ -36,11 +36,11 @@ export default function ResumeSkills({ personalInfo, defaultInfo }) {
 
 ResumeSkills.propTypes = {
   personalInfo: PropTypes.shape({
-    hardSkills: PropTypes.arrayOf(PropTypes.string),
-    softSkills: PropTypes.arrayOf(PropTypes.string),
+    hardSkills: PropTypes.string,
+    softSkills: PropTypes.string,
   }),
   defaultInfo: PropTypes.shape({
-    hardSkills: PropTypes.arrayOf(PropTypes.string),
-    softSkills: PropTypes.arrayOf(PropTypes.string),
+    hardSkills: PropTypes.string,
+    softSkills: PropTypes.string,
   }),
 };
