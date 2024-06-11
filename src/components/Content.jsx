@@ -17,11 +17,7 @@ export default function Content() {
     hardSkills: "",
   });
 
-  const [displayBtn, setDisplayBtn] = useState(false);
-
-  function handleDisplayBtn() {
-    setDisplayBtn(!displayBtn);
-  }
+  const [activeBtn, setActiveBtn] = useState(0);
 
   const defaultInfo = {
     fullName: "Sergeant Garcia",
@@ -50,16 +46,20 @@ export default function Content() {
           personalInfo={personalInfo}
           handlePersonalInfo={handlePersonalInfo}
           defaultInfo={defaultInfo}
-          displayBtn={displayBtn}
-          handleDisplayBtn={handleDisplayBtn}
+          isActive={activeBtn === 0}
+          onShow={() => setActiveBtn(0)}
         />
         <Summary
           personalInfo={personalInfo}
           handlePersonalInfo={handlePersonalInfo}
+          isActive={activeBtn === 1}
+          onShow={() => setActiveBtn(1)}
         />
         <Skills
           personalInfo={personalInfo}
           handlePersonalInfo={handlePersonalInfo}
+          isActive={activeBtn === 2}
+          onShow={() => setActiveBtn(2)}
         />
       </div>
       <ResumeContainer personalInfo={personalInfo} defaultInfo={defaultInfo} />

@@ -1,20 +1,26 @@
 import PropTypes from "prop-types";
 
-export default function Summary({ personalInfo, handlePersonalInfo }) {
+export default function Summary({
+  personalInfo,
+  handlePersonalInfo,
+  isActive,
+  onShow,
+}) {
   return (
     <div className="form-container">
-      <div className="form-header">
-        <h3>Summary</h3>
-        <button>Show</button>
-      </div>
-      <form action="" method="get" className="form summary">
-        <textarea
-          name="summary"
-          id="summary-info"
-          value={personalInfo.summary}
-          onChange={handlePersonalInfo}
-        />
-      </form>
+      <h3>Summary</h3>
+      {isActive ? (
+        <form action="" method="get" className="form summary">
+          <textarea
+            name="summary"
+            id="summary-info"
+            value={personalInfo.summary}
+            onChange={handlePersonalInfo}
+          />
+        </form>
+      ) : (
+        <button onClick={onShow}>Display</button>
+      )}
     </div>
   );
 }
